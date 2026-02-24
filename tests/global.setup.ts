@@ -1,5 +1,6 @@
-import { chromium, FullConfig } from '@playwright/test';
+import { chromium } from '@playwright/test';
 import { LoginPage } from './pages/login.po';
+import { SAUCE_USERNAME, SAUCE_PASSWORD } from './utils/env';
 
 const authFile = 'tests/.auth/user.json';
 
@@ -10,7 +11,7 @@ async function globalSetup() {
   const loginPage = new LoginPage(page);
 
   await page.goto('https://www.saucedemo.com/v1/');
-  await loginPage.submitForm('standard_user', 'secret_sauce');
+  await loginPage.submitForm(SAUCE_USERNAME, SAUCE_PASSWORD);
   await page.waitForURL('**/inventory.html');
 
   // storageState() captures cookies and standard storage

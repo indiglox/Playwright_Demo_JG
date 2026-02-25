@@ -97,7 +97,7 @@ on every change.
   1.  Sets up an Ubuntu runner with Node.js LTS.
   2.  Installs project dependencies.
   3.  Installs Playwright browsers.
-  4.  Runs the full test suite (`npx playwright test`).
+  4.  Runs the full test suite (`yarn playwright test`).
   5.  Uploads the Playwright Report as an artifact (available for 30 days) for debugging failures.
 
 #### Instructions
@@ -105,30 +105,44 @@ on every change.
 ##### Installation
 
 ```bash
-npm install
-npx playwright install
+yarn install
+yarn playwright install
 ```
+
+##### Environment Variables
+
+Credentials are loaded from a root `.env` file via `dotenv`.
+
+```env
+SAUCE_USERNAME=standard_user
+SAUCE_PASSWORD=secret_sauce
+SAUCE_INVALID_PASSWORD=invalid_password
+```
+
+- `SAUCE_USERNAME`: valid SauceDemo username used in global setup and login tests.
+- `SAUCE_PASSWORD`: valid SauceDemo password used in global setup and login tests.
+- `SAUCE_INVALID_PASSWORD`: invalid password used by the negative login test.
 
 ##### Running Tests
 
 Run all tests (Chromium):
 
 ```bash
-npx playwright test
+yarn playwright test
 ```
 
 Run Mobile Viewport tests:
 
 ```bash
-npx playwright test --project="Mobile Chrome"
+yarn playwright test --project="Mobile Chrome"
 ```
 
 Run specific deliverables:
 
 ```bash
-npx playwright test -g "Checkout Flow"
-npx playwright test -g "Visual"
-npx playwright test -g "Performance"
+yarn playwright test -g "Checkout Flow"
+yarn playwright test -g "Visual"
+yarn playwright test -g "Performance"
 ```
 
 #### Video Walkthrough

@@ -8,6 +8,10 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+      SAUCE_INVALID_PASSWORD: ${{ secrets.SAUCE_INVALID_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

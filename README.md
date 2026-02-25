@@ -1,5 +1,3 @@
-## Assessment Task: Senior QA Automation Engineer - "Project SpeedLabs"
-
 #### Overview
 
 This repository contains the solution for the "Project SpeedLabs" assessment, implementing a high-performance, robust

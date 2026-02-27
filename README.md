@@ -6,9 +6,6 @@ test suite for the SauceDemo e-commerce platform using **Playwright with TypeScr
 #### Part 1: Test Strategy & Architecture
 
 ##### Framework Choice: Playwright + TypeScript
-
-- **Speed**: Single WebSocket connection for fast execution and low flakiness compared to HTTP-based protocols
-  (Selenium).
 - **Modern Web**: Native support for auto-waiting, network interception, and mobile emulation.
 - **Type Safety**: TypeScript ensures code quality and maintainability in larger suites.
 
